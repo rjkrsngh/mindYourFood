@@ -1,0 +1,13 @@
+extends adminLayout
+
+block content 
+	div(class="nav-bar")
+		a(href="/", class="logo")
+			b mindYourFood
+		div(class="admin-dashboard")
+			a(class="admin-home admin",  href="/admin/home") Home
+			a(class="listUsers admin", onclick="getUsersList()") ListUsers
+			a(class="logout admin"  href="/admin/logout") Logout
+
+		div(id="userListPanel" onclick="handleUserEditOrDelete(event)")
+			h2 userListPanel

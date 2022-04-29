@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  div(class='nav-bar')
+    a(class='logo', href='/')
+      b mindYourFood
+    div(class='login-signup')
+      a(class='login', href="/login") Login
+      a(class='signup', href='/signup') Signup
+
+  form(id="signupForm", action="/users", method="POST")
+    label(for="first-name")
+      b First Name
+    input(type="text", class="fname", name="first_name")
+
+    label(for="last-name")
+      b Last Name
+    input(type="text", class="lname", name="last_name")
+
+    label(for="user-name")
+      b username
+    input(type="text", class="username", name="user_name", placeholder="pick a unique username") 
+
+    label(for="calorie-per-day")
+      b Daily Calorie Limit
+    input(type="text", class="calorie-per-day", name="calorie_per_day")
+
+    label(for="phone-number")
+      b Phone Number
+    input(type="text", class="phone-number", name="phone_number")    
+
+    label(for="userEmail")
+      b Email
+    input(type="text", class="userEmail", name="user_email")
+
+    label(for="password")
+      b Enter Password
+    input(type="password", class="password", name="user_password")    
+
+    input(type="submit", value="signup")

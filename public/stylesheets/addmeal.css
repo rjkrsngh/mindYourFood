@@ -1,0 +1,124 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    background-image: url('../images/image.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nav-bar {
+    background-color: #2F4F4F;
+    height: 50px;
+    width: 100%;
+    font-size: 40px;
+}
+
+.logo {
+    color: orange;
+}
+
+a {
+    cursor: pointer;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.user-dashboard {
+    float: right;
+}
+
+.meal {
+    font-size: 25px;
+    color: black;
+}
+
+#addMealForm {
+    /*display: none;*/
+    margin-top: 5%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+#fetchBtn {
+    position: relative;
+    margin-left: 54%;
+    /*margin-top: -54px;*/
+}
+
+#mealList {
+    list-style-type: none;
+    text-align: center;
+    margin-top: 3%;
+    margin-left: 30%;
+    margin-right: 30%;
+    display: none;
+    overflow-y: scroll;
+    height: auto;
+    border: 4px ridge orange;
+}
+
+#mealList .contentDiv .datetime {
+    padding: 1.4%;
+}
+
+#mealList .contentDiv .foodname {
+    width: 35%;
+    padding: 2%;
+}
+
+#mealList .contentDiv .calorie {
+    width: 7%;
+    padding: 1.4%;
+}
+
+#mealList .contentDiv .inline-child {
+    /*width: */
+    display: inline-block;
+    margin-right: 15px;
+}
+
+#mealList .buttonDiv .form-button {
+    width: 15%;
+    padding: 1%;
+    text-align: center;
+    margin-right: 5%;
+}

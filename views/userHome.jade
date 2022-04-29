@@ -1,0 +1,58 @@
+extends userLayout
+
+block content
+	div(class="nav-bar")
+		a(href="/", class="logo")
+			b mindYourFood
+		div(class="user-dashboard")
+			a(class="user-home meal",  href="/users") Home
+			a(class="AddMeal meal", onclick="showAddMealForm()") AddMeal
+			a(class="EditMeal meal", onclick="getMealsList()") ListMeals
+			a(class="logout meal"  href="/logout") Logout
+
+	form(id="addMealForm", action="/users/add", method="POST")
+		label(for="food-name")
+			b food-name
+		input(type="text", class="food-name", name="food_name", placeholder="Name of the food")
+		br
+
+		label(for="description")
+			b Description
+		input(type="text", class="description", name="description", placeholder="Describe your food")
+		br
+
+		label(for="timestamp")
+			b Time of consumption
+		input(type="datetime-local", class="timestamp", name="timestamp")
+		br
+
+		label(for="calorie")
+			b Calorie
+		br
+		input(type="number", class="calorie", name="calorie", value="0")
+
+		input(type="submit", value="AddMeal", class="addMealBtn", onclick="getUpdatedConsumptionStatus(true)")
+
+	div
+		div(id="limitDiv") Daily Limit:
+			input(type="number", id="daily-limit", readonly)
+
+		div(id="filterButtons")
+			div(id="btns")
+				p Date From
+				input(type="date", id="filterDate", name="filterDate", onchange="filterByDate()")
+
+			div(class="dropdown", id="btn")
+				P SortBy
+				select(id="sortBy", onchange="sortDisplayPanel()")
+					option(selected) Timestamp
+					option Calorie
+
+			div(class="dropdown", id="btn")
+				p Sort Order
+				select(id="sortOrder", onchange="sortDisplayPanel()")
+					option(selected) Ascending
+					option Descending
+
+		div(id="mealList", onclick="handleEditOrDeleteMeal(event)")
+		div(id="emptyMealsList")
